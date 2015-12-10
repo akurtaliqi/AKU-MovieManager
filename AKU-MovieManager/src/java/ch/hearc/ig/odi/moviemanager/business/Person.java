@@ -5,6 +5,8 @@
  */
 package ch.hearc.ig.odi.moviemanager.business;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author ajtene.kurtaliq
@@ -13,7 +15,8 @@ public class Person {
     private Long id;
     private String firstName;
     private String lastName;
-
+    private ArrayList<Movie> personnes;
+    
     public Person() {
     }
 

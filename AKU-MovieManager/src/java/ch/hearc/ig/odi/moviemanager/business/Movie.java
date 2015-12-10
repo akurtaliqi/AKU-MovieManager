@@ -5,6 +5,8 @@
  */
 package ch.hearc.ig.odi.moviemanager.business;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author ajtene.kurtaliq
@@ -13,6 +15,7 @@ public class Movie {
     private Long id;
     private String name;
     private String producer;
+    private ArrayList<Movie> movies;
 
     public Movie() {
     }
