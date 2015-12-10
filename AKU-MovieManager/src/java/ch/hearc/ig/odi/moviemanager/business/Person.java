@@ -5,13 +5,14 @@
  */
 package ch.hearc.ig.odi.moviemanager.business;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author ajtene.kurtaliq
  */
-public class Person {
+public class Person implements Serializable {
 
     private Long id;
     private String firstName;
@@ -25,7 +26,7 @@ public class Person {
      * Constructeur paramétré de la classe Person. Toutes les valeurs sont
      * obligatoires.
      *
-     * @param id Le numéro identifiant de la personne (Ex :
+     * @param id Le numéro identifiant de la personne
      * @param firstName Le prénom du client
      * @param lastName Le nom du client
      */

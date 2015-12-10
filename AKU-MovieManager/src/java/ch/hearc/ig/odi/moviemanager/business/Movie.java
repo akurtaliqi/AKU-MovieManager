@@ -5,13 +5,14 @@
  */
 package ch.hearc.ig.odi.moviemanager.business;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author ajtene.kurtaliq
  */
-public class Movie {
+public class Movie implements Serializable {
 
     private Long id;
     private String name;
@@ -21,7 +22,7 @@ public class Movie {
     /**
      * Constructeur paramétré de la classe Movie. 
      * Toutes les valeurs sont obligatoires.
-     * @param id Le numéro identifiant du film (Ex :
+     * @param id Le numéro identifiant du film
      * @param name Le titre du film
      * @param producer Le nom du réalisateur
      */
