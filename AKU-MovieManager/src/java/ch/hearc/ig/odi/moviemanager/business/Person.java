@@ -12,19 +12,37 @@ import java.util.ArrayList;
  * @author ajtene.kurtaliq
  */
 public class Person {
+
     private Long id;
     private String firstName;
     private String lastName;
     private ArrayList<Movie> movies;
-    
+
     public Person() {
     }
 
+    /**
+     * Constructeur paramétré de la classe Person. Toutes les valeurs sont
+     * obligatoires.
+     *
+     * @param id Le numéro identifiant de la personne (Ex :
+     * @param firstName Le prénom du client
+     * @param lastName Le nom du client
+     */
     public Person(Long id, String firstName, String lastName) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.movies = new ArrayList<>();
+    }
+
+    /**
+     * Méthode qui ajoute un film à la personne
+     *
+     * @param movie Le film à ajouter à la liste.
+     */
+    public void addMovie(Movie movie) {
+        this.movies.add(movie);
     }
 
     public Long getId() {
@@ -59,10 +77,4 @@ public class Person {
         this.movies = movies;
     }
 
-    
-    
-    public void addMovie (Movie movie)  {
-        this.movies.add(movie);
-    }
-    
 }

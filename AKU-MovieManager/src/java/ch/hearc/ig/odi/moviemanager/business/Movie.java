@@ -12,14 +12,19 @@ import java.util.ArrayList;
  * @author ajtene.kurtaliq
  */
 public class Movie {
+
     private Long id;
     private String name;
     private String producer;
     private ArrayList<Person> personnes;
 
-    public Movie() {
-    }
-
+    /**
+     * Constructeur paramétré de la classe Movie. 
+     * Toutes les valeurs sont obligatoires.
+     * @param id Le numéro identifiant du film (Ex :
+     * @param name Le titre du film
+     * @param producer Le nom du réalisateur
+     */
     public Movie(Long id, String name, String producer) {
         this.id = id;
         this.name = name;
@@ -59,8 +64,4 @@ public class Movie {
         this.personnes = personnes;
     }
 
-    
-    
-    
-    
 }
