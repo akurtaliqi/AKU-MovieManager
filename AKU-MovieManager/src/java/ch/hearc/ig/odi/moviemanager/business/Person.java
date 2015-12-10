@@ -24,6 +24,7 @@ public class Person {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
+        this.personnes = new ArrayList<>();
     }
 
     public Long getId() {
@@ -48,6 +49,14 @@ public class Person {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public ArrayList<Movie> getPersonnes() {
+        return personnes;
+    }
+
+    public void setPersonnes(ArrayList<Movie> personnes) {
+        this.personnes = personnes;
     }
     
     

@@ -24,6 +24,7 @@ public class Movie {
         this.id = id;
         this.name = name;
         this.producer = producer;
+        this.movies = new ArrayList<>();
     }
 
     public Long getId() {
@@ -48,6 +49,14 @@ public class Movie {
 
     public void setProducer(String producer) {
         this.producer = producer;
+    }
+
+    public ArrayList<Movie> getMovies() {
+        return movies;
+    }
+
+    public void setMovies(ArrayList<Movie> movies) {
+        this.movies = movies;
     }
     
     
