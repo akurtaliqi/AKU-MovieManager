@@ -15,7 +15,7 @@ public class Person {
     private Long id;
     private String firstName;
     private String lastName;
-    private ArrayList<Movie> personnes;
+    private ArrayList<Movie> movies;
     
     public Person() {
     }
@@ -24,7 +24,7 @@ public class Person {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.personnes = new ArrayList<>();
+        this.movies = new ArrayList<>();
     }
 
     public Long getId() {
@@ -51,14 +51,18 @@ public class Person {
         this.lastName = lastName;
     }
 
-    public ArrayList<Movie> getPersonnes() {
-        return personnes;
+    public ArrayList<Movie> getMovies() {
+        return movies;
     }
 
-    public void setPersonnes(ArrayList<Movie> personnes) {
-        this.personnes = personnes;
+    public void setMovies(ArrayList<Movie> movies) {
+        this.movies = movies;
     }
+
     
     
+    public void addMovie (Movie movie)  {
+        this.movies.add(movie);
+    }
     
 }
