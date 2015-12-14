@@ -13,13 +13,42 @@
         <f:loadBundle
             basename="ch.hearc.ig.odi.moviemanager.bundle.Ressources" 
             var="resrc" />
-        <title><h:outputText value="#{resrc['persons.list.title']}" /></title>
+        <title><h:outputText value="#{resrc['personDetails.title']}" /></title>
 
     </h:head>
     <h:body>
         <h2>
-            <h:outputText value="#{resrc['persons.list.title']}" />
+            <h:outputText value="#{resrc['personDetails.title']}" />
         </h2>
+        
+        <h:panelGrid border="0" columns="2" style="margin-left: 40px;">
+            <h:outputLabel value="#{resrc['person.id']} : "  style="margin-right: 20px;"/>
+            <h:outputText value="#{personDetailsBean.person.id}" />
+            <h:outputLabel value="#{resrc['person.firstName']} : " style="margin-right: 20px;" />
+            <h:outputText value="#{personDetailsBean.person.firstName}" />
+            <h:outputLabel value="#{resrc['person.lastName']} : "  style="margin-right: 20px;"/>
+            <h:outputText value="#{personDetailsBean.person.lastName}" />
+        </h:panelGrid>
+        
+        
+         <h:form id="moviesListForm" style="margin-left: 40px;">
+
+             <h:dataTable id="dtMovies" var="movie" value="#{personDetailsBean.movies}">
+                 <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="prout ! pas encore dans les bundles" />
+                    </f:facet>
+                     <h:commandLink id="cmdLnkViewMovieNumber" value="#{movie.id}" action="#" />
+                </h:column>
+                 <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="prout ! pas encore dans les bundles" />
+                    </f:facet>
+                     <h:commandLink id="cmdLnkViewMovieName" value="#{movie.name}" action="#" />
+                </h:column>
+                
+            </h:dataTable>
+         </h:form>
 
     </h:body>
 </html>
