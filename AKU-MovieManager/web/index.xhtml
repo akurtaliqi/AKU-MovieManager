@@ -34,13 +34,13 @@
                     <f:facet name="header">
                         <h:outputText value="#{resrc['person.firstName']}" />
                     </f:facet>
-                    <h:commandLink id="cmdLnkViewPersonFN" value="#{person.firstName}" action="#" style="margin-right: 20px;" />
+                    <h:commandLink id="cmdLnkViewPersonFN" value="#{person.firstName}" action="#{personDetailsBean.showPerson(person)}" style="margin-right: 20px;" />
                 </h:column>
                 <h:column>
                     <f:facet name="header">
                         <h:outputText value="#{resrc['person.lastName']}" />
                     </f:facet>
-                    <h:commandLink id="cmdLnkViewPersonLN" value="#{person.lastName}" action="#" style="margin-right: 20px;"/>
+                    <h:commandLink id="cmdLnkViewPersonLN" value="#{person.lastName}" action="#{personDetailsBean.showPerson(person)}" style="margin-right: 20px;"/>
                 </h:column>
                 <h:column>
                     <f:facet name="header">

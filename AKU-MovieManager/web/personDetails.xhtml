@@ -48,6 +48,13 @@
                     </f:facet>
                      <h:commandLink id="cmdLnkViewMovieName" value="#{movie.name}" action="#" />
                 </h:column>
+                  <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="#{resrc['movie.producer']}" style="margin-right: 20px;"/>
+                    </f:facet>
+                     <h:outputText value="#{movie.producer}" />
+                </h:column>
+                 
                 
             </h:dataTable>
          </h:form>
