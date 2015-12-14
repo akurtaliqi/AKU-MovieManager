@@ -3,7 +3,7 @@
               xmlns="http://xmlns.jcp.org/xml/ns/javaee"
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
               xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
-    
+
     <application>
         <locale-config>
             <default-locale>en</default-locale>
@@ -11,7 +11,7 @@
             <supported-locale>en</supported-locale>
         </locale-config>
         <resource-bundle>
-            <base-name>ch.hearc.ig.odi.moviemanager.bundle</base-name>
+            <base-name>ch.hearc.ig.odi.moviemanager.bundle.Ressources</base-name>
             <var>resrc</var>
         </resource-bundle>
     </application>

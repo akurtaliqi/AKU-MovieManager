@@ -4,38 +4,80 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
-        <title><h:outputText value="coucou" /></title>
+        <f:loadBundle
+                basename="ch.hearc.ig.odi.moviemanager.bundle.Ressources" 
+                var="resrc" />
+        <title><h:outputText value="#{resrc['persons.list.title']}" /></title>
     </h:head>
     <h:body>
         <h2>
-            <h:outputText value="coucou" />
+            <h:outputText value="#{resrc['persons.list.title']}" />
         </h2>
 
-        <h:form id="custListForm">
+        <h:form id="persListForm">
 
             <h:dataTable id="dtPersons" var="person" value="#{personsBean.persons}">
                 <h:column>
                     <f:facet name="header">
-                        <h:outputText value="id" />
+                        <h:outputText value="#{resrc['person.id']}" />
                     </f:facet>
-                    <h:commandLink id="cmdLnkViewCustomerNumber" value="#{person.id}" action="#" />
+                    <h:commandLink id="cmdLnkViewPersonNumber" value="#{person.id}" action="#" />
                 </h:column>
                 <h:column>
                     <f:facet name="header">
-                        <h:outputText value="firstName" />
+                        <h:outputText value="#{resrc['person.firstName']}" />
                     </f:facet>
-                    <h:commandLink id="cmdLnkViewCustomerFN" value="#{person.firstName}" action="#" />
+                    <h:commandLink id="cmdLnkViewPersonFN" value="#{person.firstName}" action="#" />
                 </h:column>
                 <h:column>
                     <f:facet name="header">
-                        <h:outputText value="lastName" />
+                        <h:outputText value="#{resrc['person.lastName']}" />
                     </f:facet>
-                    <h:commandLink id="cmdLnkViewCustomerLN" value="#{person.lastName}" action="#" />
+                    <h:commandLink id="cmdLnkViewPersonLN" value="#{person.lastName}" action="#" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="nombre de films" />
+                    </f:facet>
+                    <h:outputText value="#{person.movies.size()}"/>
                 </h:column>
             </h:dataTable>
 
             <br/>
-            <h:commandButton id="cmdBtnAddCustomer" value="bouton" action="#" />
+            <!--h:commandButton id="cmdBtnAddCustomer" value="bouton" action="#" /-->
+        </h:form>
+        
+        <h:form id="movieListForm">
+
+            <h:dataTable id="dtMovies" var="movie" value="#{moviesBean.movies}">
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="#{resrc['person.id']}" />
+                    </f:facet>
+                    <h:commandLink id="cmdLnkViewMovieNumber" value="#{movie.id}" action="#" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="#{resrc['person.firstName']}" />
+                    </f:facet>
+                    <h:commandLink id="cmdLnkViewMovieName" value="#{movie.name}" action="#" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="#{resrc['person.lastName']}" />
+                    </f:facet>
+                    <h:outputText value="#{movie.producer}" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="nombre de personnes" />
+                    </f:facet>
+                    <h:outputText value="#{movie.personnes.size()}" />
+                </h:column>
+            </h:dataTable>
+
+            <br/>
+            <!--h:commandButton id="cmdBtnAddCustomer" value="bouton" action="#" /-->
         </h:form>
 
     </h:body>
