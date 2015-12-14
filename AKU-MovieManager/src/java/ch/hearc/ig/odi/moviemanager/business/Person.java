@@ -19,10 +19,7 @@ public class Person implements Serializable {
     private String firstName;
     private String lastName;
     private HashMap<Long, Movie> movies;
-
-    public Person() {
-    }
-
+    
     /**
      * Constructeur paramétré de la classe Person. Toutes les valeurs sont
      * obligatoires.
