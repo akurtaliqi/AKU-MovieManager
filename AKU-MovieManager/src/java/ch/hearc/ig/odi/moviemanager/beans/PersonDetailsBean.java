@@ -1,0 +1,60 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package ch.hearc.ig.odi.moviemanager.beans;
+
+import ch.hearc.ig.odi.moviemanager.business.Person;
+import ch.hearc.ig.odi.moviemanager.services.Services;
+import java.util.ArrayList;
+import java.util.List;
+import javax.enterprise.context.RequestScoped;
+import javax.inject.Inject;
+import javax.inject.Named;
+
+/**
+ *
+ * @author ajtene.kurtaliq
+ */
+@Named(value = "personDetailsBean")
+@RequestScoped
+public class PersonDetailsBean {
+    @Inject
+    Services services;
+    private Person person;
+
+    public PersonDetailsBean() {
+    }
+    
+    public String showPerson(Person pers){
+        if(pers != null){
+            person = pers;
+            return "show";
+        }else{
+            person = null;
+            return "error";
+        }
+    }
+    
+    public List<Person> getMovies(){
+        if(person == null){
+            return new ArrayList();
+        }
+        
+        return new ArrayList(person.getMovies().values());
+    }
+
+    public Person getPerson() {
+        return person;
+    }
+
+    public void setPerson(Person person) {
+        this.person = person;
+    }
+    
+    
+    
+    
+    
+}

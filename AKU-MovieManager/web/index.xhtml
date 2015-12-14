@@ -28,24 +28,23 @@
                     <f:facet name="header">
                         <h:outputText value="#{resrc['person.id']}" />
                     </f:facet>
-                    <h:commandLink id="cmdLnkViewPersonNumber" value="#{person.id}" action="#" />
+                    <h:commandLink id="cmdLnkViewPersonNumber" value="#{person.id}" action="#" style="margin-right: 20px;"/>
                 </h:column>
-                <h:outputText value="&#160;" />
                 <h:column>
                     <f:facet name="header">
                         <h:outputText value="#{resrc['person.firstName']}" />
                     </f:facet>
-                    <h:commandLink id="cmdLnkViewPersonFN" value="#{person.firstName}" action="#" />
+                    <h:commandLink id="cmdLnkViewPersonFN" value="#{person.firstName}" action="#" style="margin-right: 20px;" />
                 </h:column>
                 <h:column>
                     <f:facet name="header">
                         <h:outputText value="#{resrc['person.lastName']}" />
                     </f:facet>
-                    <h:commandLink id="cmdLnkViewPersonLN" value="#{person.lastName}" action="#" />
+                    <h:commandLink id="cmdLnkViewPersonLN" value="#{person.lastName}" action="#" style="margin-right: 20px;"/>
                 </h:column>
                 <h:column>
                     <f:facet name="header">
-                        <h:outputText value="#{resrc['person.movieNumber']}" />
+                        <h:outputText value="#{resrc['person.movieNumber']}" style="margin-right: 20px;"/>
                     </f:facet>
                     <h:outputText value="#{person.movies.size()}"/>
                 </h:column>
@@ -66,25 +65,25 @@
                     <f:facet name="header">
                         <h:outputText value="#{resrc['movie.id']}" />
                     </f:facet>
-                    <h:commandLink id="cmdLnkViewMovieNumber" value="#{movie.id}" action="#" />
+                    <h:commandLink id="cmdLnkViewMovieNumber" value="#{movie.id}" action="#" style="margin-right: 20px;" />
                 </h:column>
                 <h:column>
                     <f:facet name="header">
                         <h:outputText value="#{resrc['movie.name']}" />
                     </f:facet>
-                    <h:commandLink id="cmdLnkViewMovieName" value="#{movie.name}" action="#" />
+                    <h:commandLink id="cmdLnkViewMovieName" value="#{movie.name}" action="#" style="margin-right: 20px;"/>
                 </h:column>
                 <h:column>
                     <f:facet name="header">
                         <h:outputText value="#{resrc['movie.producer']}" />
                     </f:facet>
-                    <h:outputText value="#{movie.producer}" />
+                    <h:outputText value="#{movie.producer}" style="margin-right: 20px;" />
                 </h:column>
                 <h:column>
                     <f:facet name="header">
                         <h:outputText value="#{resrc['movie.nbPersons']}" />
                     </f:facet>
-                    <h:outputText value="#{movie.personnes.size()}" />
+                    <h:outputText value="#{movie.personnes.size()}" style="margin-right: 20px;" />
                 </h:column>
             </h:dataTable>
 
