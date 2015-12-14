@@ -30,19 +30,21 @@
             <h:outputText value="#{personDetailsBean.person.lastName}" />
         </h:panelGrid>
         
-        
+        <h3>
+            <h:outputText value="#{resrc['personDetails.listeMovie.title']}" />
+        </h3>
          <h:form id="moviesListForm" style="margin-left: 40px;">
 
              <h:dataTable id="dtMovies" var="movie" value="#{personDetailsBean.movies}">
                  <h:column>
                     <f:facet name="header">
-                        <h:outputText value="prout ! pas encore dans les bundles" />
+                        <h:outputText value="#{resrc['movie.id']}" style="margin-right: 20px;"/>
                     </f:facet>
                      <h:commandLink id="cmdLnkViewMovieNumber" value="#{movie.id}" action="#" />
                 </h:column>
                  <h:column>
                     <f:facet name="header">
-                        <h:outputText value="prout ! pas encore dans les bundles" />
+                        <h:outputText value="#{resrc['movie.name']}" style="margin-right: 20px;"/>
                     </f:facet>
                      <h:commandLink id="cmdLnkViewMovieName" value="#{movie.name}" action="#" />
                 </h:column>
