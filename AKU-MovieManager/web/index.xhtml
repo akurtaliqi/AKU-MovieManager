@@ -1,12 +1,43 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
-        <title>Facelet Title</title>
+        <title><h:outputText value="coucou" /></title>
     </h:head>
     <h:body>
-        Hello from Facelets
+        <h2>
+            <h:outputText value="coucou" />
+        </h2>
+
+        <h:form id="custListForm">
+
+            <h:dataTable id="dtPersons" var="person" value="#{personsBean.persons}">
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="id" />
+                    </f:facet>
+                    <h:commandLink id="cmdLnkViewCustomerNumber" value="#{person.id}" action="#" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="firstName" />
+                    </f:facet>
+                    <h:commandLink id="cmdLnkViewCustomerFN" value="#{person.firstName}" action="#" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="lastName" />
+                    </f:facet>
+                    <h:commandLink id="cmdLnkViewCustomerLN" value="#{person.lastName}" action="#" />
+                </h:column>
+            </h:dataTable>
+
+            <br/>
+            <h:commandButton id="cmdBtnAddCustomer" value="bouton" action="#" />
+        </h:form>
+
     </h:body>
 </html>
 
