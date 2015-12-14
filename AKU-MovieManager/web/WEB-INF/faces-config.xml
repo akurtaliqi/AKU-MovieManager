@@ -15,5 +15,20 @@
             <var>resrc</var>
         </resource-bundle>
     </application>
+    
+    <navigation-rule>
+        <from-view-id>/index.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{personDetailsBean.showPerson(person)}</from-action>          
+            <from-outcome>show</from-outcome>
+            <to-view-id>/personDetails.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-action>#{personDetailsBean.showPerson(person)}</from-action>          
+            <from-outcome>error</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+
 
 </faces-config>
