@@ -5,8 +5,9 @@
  */
 package ch.hearc.ig.odi.moviemanager.business;
 
+import ch.hearc.ig.odi.moviemanager.exception.MovieException;
 import java.io.Serializable;
-import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  *
@@ -17,7 +18,7 @@ public class Person implements Serializable {
     private Long id;
     private String firstName;
     private String lastName;
-    private ArrayList<Movie> movies;
+    private HashMap<Long, Movie> movies;
 
     public Person() {
     }
@@ -34,16 +35,22 @@ public class Person implements Serializable {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.movies = new ArrayList<>();
+        this.movies = new HashMap();
     }
 
     /**
      * Méthode qui ajoute un film à la personne
      *
      * @param movie Le film à ajouter à la liste.
+     * @throws ch.hearc.ig.odi.moviemanager.exception.MovieException Exception levée si le film a déjà été ajouté à la liste
      */
-    public void addMovie(Movie movie) {
-        this.movies.add(movie);
+    public void addMovie(Movie movie) throws MovieException {
+        if(movies.containsKey(movie.getId())) {
+            throw new MovieException("Film deja vu !");
+        } else {
+            movie.getPersonnes().put(this.id, this);
+            this.movies.put(movie.getId(), movie);
+        }
     }
 
     public Long getId() {
@@ -70,11 +77,11 @@ public class Person implements Serializable {
         this.lastName = lastName;
     }
 
-    public ArrayList<Movie> getMovies() {
+    public HashMap<Long, Movie> getMovies() {
         return movies;
     }
 
-    public void setMovies(ArrayList<Movie> movies) {
+    public void setMovies(HashMap<Long, Movie> movies) {
         this.movies = movies;
     }
 

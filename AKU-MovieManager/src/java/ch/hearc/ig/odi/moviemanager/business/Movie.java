@@ -6,7 +6,7 @@
 package ch.hearc.ig.odi.moviemanager.business;
 
 import java.io.Serializable;
-import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  *
@@ -17,7 +17,7 @@ public class Movie implements Serializable {
     private Long id;
     private String name;
     private String producer;
-    private ArrayList<Person> personnes;
+    private HashMap<Long, Person> personnes;
 
     /**
      * Constructeur paramétré de la classe Movie. 
@@ -30,7 +30,7 @@ public class Movie implements Serializable {
         this.id = id;
         this.name = name;
         this.producer = producer;
-        this.personnes = new ArrayList<>();
+        this.personnes = new HashMap();
     }
 
     public Long getId() {
@@ -57,11 +57,11 @@ public class Movie implements Serializable {
         this.producer = producer;
     }
 
-    public ArrayList<Person> getPersonnes() {
+    public HashMap<Long, Person> getPersonnes() {
         return personnes;
     }
 
-    public void setPersonnes(ArrayList<Person> personnes) {
+    public void setPersonnes(HashMap<Long, Person> personnes) {
         this.personnes = personnes;
     }
 
