@@ -27,6 +27,11 @@ public class PersonDetailsBean {
     public PersonDetailsBean() {
     }
     
+    /**
+     * Méthode qui reçoit la personne à afficher sur la page.
+     * @param pers La personne à afficher
+     * @return "show" si le client est valide, "error" si le paramètre est null
+     */
     public String showPerson(Person pers){
         if(pers != null){
             person = pers;
