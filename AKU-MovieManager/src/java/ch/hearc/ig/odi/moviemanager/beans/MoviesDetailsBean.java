@@ -29,12 +29,12 @@ public class MoviesDetailsBean {
     /**
      * Get the movie to display
      *
-     * @param p_movie The movie to display
+     * @param m The movie to display
      * @return "display" if correct parameter, "error" if null parameter
      */
-    public String showMovie(Movie p_movie) {
-        if (p_movie != null) {
-            movie = p_movie;
+    public String showMovie(Movie m) {
+        if (m != null) {
+            movie = m;
             return "showmovie";   
         } else {
             return "error";
