@@ -21,11 +21,23 @@
             <h:outputText value="pas implémenté" />
         </h2>
         
-        <h:form id="moviesListForm" style="margin-left: 40px;">
-
+        <h:form>
+            <h:panelGrid border="0" columns="2">
+                <h:outputLabel for="id" value="coucou"/>
+                <h:outputText id="id" value="#{moviesDetailsBean.movie.id}"/>
+                
+                <h:outputLabel for="name" value="coucou"/>
+                <h:outputText id="name" value="#{moviesDetailsBean.movie.name}"/>
+                
+                <h:outputLabel for="producer" value="coucou"/>
+                <h:outputText id="producer" value="#{moviesDetailsBean.movie.producer}"/>
+            </h:panelGrid>
             
+            <!--h2><h:outputText value="#{bundle.movieDetailPeopleList}"/></h2-->
+            
+            
+            <br/>
             <h:commandButton id="backIndex" value="#{resrc['label.backIndex']}" action="backIndex"/>
-
         </h:form>
         
     </h:body>
