@@ -20,7 +20,7 @@
         <h2>
             <h:outputText value="#{resrc['personDetails.title']}" />
         </h2>
-        
+
         <h:panelGrid border="0" columns="2" style="margin-left: 40px;">
             <h:outputLabel value="#{resrc['person.id']} : "  style="margin-right: 20px;"/>
             <h:outputText value="#{personDetailsBean.person.id}" />
@@ -29,35 +29,37 @@
             <h:outputLabel value="#{resrc['person.lastName']} : "  style="margin-right: 20px;"/>
             <h:outputText value="#{personDetailsBean.person.lastName}" />
         </h:panelGrid>
-        
+
         <h3>
             <h:outputText value="#{resrc['personDetails.listeMovie.title']}" />
         </h3>
-         <h:form id="moviesListForm" style="margin-left: 40px;">
+        <h:form id="moviesListForm" style="margin-left: 40px;">
 
-             <h:dataTable id="dtMovies" var="movie" value="#{personDetailsBean.movies}">
-                 <h:column>
+            <h:dataTable id="dtMovies" var="movie" value="#{personDetailsBean.movies}">
+                <h:column>
                     <f:facet name="header">
                         <h:outputText value="#{resrc['movie.id']}" />
                     </f:facet>
-                     <h:outputText id="cmdLnkViewMovieNumber" value="#{movie.id}" style="margin-right: 20px;"/>
+                    <h:outputText id="cmdLnkViewMovieNumber" value="#{movie.id}" style="margin-right: 20px;"/>
                 </h:column>
-                 <h:column>
+                <h:column>
                     <f:facet name="header">
                         <h:outputText value="#{resrc['movie.name']}"/>
                     </f:facet>
-                     <h:commandLink id="cmdLnkViewMovieName" value="#{movie.name}" action="#{moviesDetailsBean.showMovie(movie)}" style="margin-right: 20px;" />
+                    <h:commandLink id="cmdLnkViewMovieName" value="#{movie.name}" action="#{moviesDetailsBean.showMovie(movie)}" style="margin-right: 20px;" />
                 </h:column>
-                  <h:column>
+                <h:column>
                     <f:facet name="header">
                         <h:outputText value="#{resrc['movie.producer']}"/>
                     </f:facet>
-                     <h:outputText value="#{movie.producer}" style="margin-right: 20px;"/>
+                    <h:outputText value="#{movie.producer}" style="margin-right: 20px;"/>
                 </h:column>
-                 
-                
             </h:dataTable>
-         </h:form>
+            <br/>
+            <br/>
+            <h:commandButton id="backIndex" value="#{resrc['label.backIndex']}" action="backIndex"/>
+
+        </h:form>
 
     </h:body>
 </html>

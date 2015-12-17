@@ -41,6 +41,17 @@
             <from-outcome>showmovie</from-outcome>
             <to-view-id>/movieDetails.xhtml</to-view-id>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>backIndex</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/movieDetails.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>backIndex</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+        </navigation-case>
     </navigation-rule>
 
 
