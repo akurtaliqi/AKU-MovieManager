@@ -18,43 +18,47 @@
     </h:head>
     <h:body>
         <h2>
-            <h:outputText value="pas implémenté" />
+            <h:outputText value="#{resrc['movieDetails.title']}" />
         </h2>
-        
-        <h:form>
+
+        <h:form style="margin-left: 40px;">
             <h:panelGrid border="0" columns="2">
-                <h:outputLabel for="id" value="coucou"/>
-                <h:outputText id="id" value="#{moviesDetailsBean.movie.id}"/>
-                
-                <h:outputLabel for="name" value="coucou"/>
-                <h:outputText id="name" value="#{moviesDetailsBean.movie.name}"/>
-                
-                <h:outputLabel for="producer" value="coucou"/>
-                <h:outputText id="producer" value="#{moviesDetailsBean.movie.producer}"/>
+                <h:outputLabel for="id" value="#{resrc['movie.id']}" style="margin-right: 20px;"/>
+                <h:outputText id="id" value="#{moviesDetailsBean.movie.id}"  />
+
+                <h:outputLabel for="name" value="#{resrc['movie.name']}" style="margin-right: 20px;"/>
+                <h:outputText id="name" value="#{moviesDetailsBean.movie.name}"  />
+
+                <h:outputLabel for="producer" value="#{resrc['movie.producer']}" style="margin-right: 20px;" />
+                <h:outputText id="producer" value="#{moviesDetailsBean.movie.producer}" />
             </h:panelGrid>
-            
-            <!--h2><h:outputText value="coucou"/></h2-->
-            
+        </h:form>
+        
+        <h3>
+            <h:outputText value="#{resrc['movieDetails.subtitle']}"/>
+        </h3>
+        
+        <h:form style="margin-left: 40px;"> 
             <h:dataTable value="#{moviesDetailsBean.personMovies}" var="person">
                 <h:column>
                     <!-- id -->
-                    <f:facet name="header"><h:outputText value="coucou"/></f:facet>
+                    <f:facet name="header"><h:outputText value="#{resrc['person.id']}" style="margin-right: 20px;"/></f:facet>
                     <h:outputText value="#{person.id}"/>
                 </h:column>
                 <h:column>
                     <!-- prénom -->
-                    <f:facet name="header"><h:outputText value="coucou"/></f:facet>
-                    <h:commandLink value="#{person.firstName}" action="#"/>
+                    <f:facet name="header"><h:outputText value="#{resrc['person.firstName']}" style="margin-right: 20px;"/></f:facet>
+                    <h:commandLink value="#{person.firstName}"  action="#{personDetailsBean.showPerson(person)}"/>
                 </h:column>
                 <h:column>
                     <!-- nom -->
-                    <f:facet name="header"><h:outputText value="coucou"/></f:facet>
-                    <h:commandLink value="#{person.lastName}" action="#"/>
+                    <f:facet name="header"><h:outputText value="#{resrc['person.lastName']}" style="margin-right: 20px;"/></f:facet>
+                    <h:commandLink value="#{person.lastName}"  action="#{personDetailsBean.showPerson(person)}"/>
                 </h:column>
             </h:dataTable>
             <br/>
             <h:commandButton id="backIndex" value="#{resrc['label.backIndex']}" action="backIndex"/>
         </h:form>
-        
+
     </h:body>
 </html>
