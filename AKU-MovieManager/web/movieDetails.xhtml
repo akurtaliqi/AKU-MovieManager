@@ -33,9 +33,25 @@
                 <h:outputText id="producer" value="#{moviesDetailsBean.movie.producer}"/>
             </h:panelGrid>
             
-            <!--h2><h:outputText value="#{bundle.movieDetailPeopleList}"/></h2-->
+            <!--h2><h:outputText value="coucou"/></h2-->
             
-            
+            <h:dataTable value="#{moviesDetailsBean.movie.personnes}" var="person">
+                <h:column>
+                    <!-- id -->
+                    <f:facet name="header"><h:outputText value="coucou"/></f:facet>
+                    <h:outputText value="#{person.id}"/>
+                </h:column>
+                <h:column>
+                    <!-- prénom -->
+                    <f:facet name="header"><h:outputText value="coucou"/></f:facet>
+                    <h:commandLink value="#{person.firstName}" action="#"/>
+                </h:column>
+                <h:column>
+                    <!-- nom -->
+                    <f:facet name="header"><h:outputText value="coucou"/></f:facet>
+                    <h:commandLink value="#{person.lastName}" action="#"/>
+                </h:column>
+            </h:dataTable>
             <br/>
             <h:commandButton id="backIndex" value="#{resrc['label.backIndex']}" action="backIndex"/>
         </h:form>

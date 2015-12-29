@@ -6,7 +6,9 @@
 package ch.hearc.ig.odi.moviemanager.business;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 /**
  *
@@ -63,6 +65,10 @@ public class Movie implements Serializable {
 
     public void setPersonnes(HashMap<Long, Person> personnes) {
         this.personnes = personnes;
+    }
+    
+    public List<Person> getPeople() {
+        return new ArrayList<>(personnes.values());
     }
 
 }
