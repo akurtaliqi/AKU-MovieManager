@@ -24,12 +24,12 @@ public class Person implements Serializable {
     }
 
     /**
-     * Constructeur paramétré de la classe Person. 
-     * Toutes les valeurs sont obligatoires.
+     * Parametred constructor of the class Person.
+     * All the values are obligatory
      *
-     * @param id Le numéro identifiant de la personne
-     * @param firstName Le prénom du client
-     * @param lastName Le nom du client
+     * @param id Person's id
+     * @param firstName Person's first name
+     * @param lastName Person's last name
      */
     public Person(Long id, String firstName, String lastName) {
         this.id = id;
