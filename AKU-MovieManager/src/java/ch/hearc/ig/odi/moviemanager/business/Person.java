@@ -24,8 +24,8 @@ public class Person implements Serializable {
     }
 
     /**
-     * Constructeur paramétré de la classe Person. Toutes les valeurs sont
-     * obligatoires.
+     * Constructeur paramétré de la classe Person. 
+     * Toutes les valeurs sont obligatoires.
      *
      * @param id Le numéro identifiant de la personne
      * @param firstName Le prénom du client
@@ -39,10 +39,9 @@ public class Person implements Serializable {
     }
 
     /**
-     * Méthode qui ajoute un film à la personne
-     *
-     * @param movie Le film à ajouter à la liste.
-     * @throws ch.hearc.ig.odi.moviemanager.exception.MovieException Exception levée si le film a déjà été ajouté à la liste
+     * Add movie to the person
+     * @param movie The movie to add to the llist
+     * @throws ch.hearc.ig.odi.moviemanager.exception.MovieException Exception raised if the movies has already been added
      */
     public void addMovie(Movie movie) throws MovieException {
         if(movies.containsKey(movie.getId())) {
@@ -52,34 +51,70 @@ public class Person implements Serializable {
             this.movies.put(movie.getId(), movie);
         }
     }
+    
+    /**
+     * 
+     * @return id
+     */
 
     public Long getId() {
         return id;
     }
+    
+    /**
+     * 
+     * @param id 
+     */
 
     public void setId(Long id) {
         this.id = id;
     }
+    
+    /**
+     * 
+     * @return 
+     */
 
     public String getFirstName() {
         return firstName;
     }
-
+    
+    /**
+     * 
+     * @param firstName 
+     */
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
-
+    
+    /**
+     * 
+     * @return 
+     */
     public String getLastName() {
         return lastName;
     }
-
+    
+    /**
+     * 
+     * @param lastName 
+     */
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
-
+    
+    /**
+     * 
+     * @return 
+     */
     public HashMap<Long, Movie> getMovies() {
         return movies;
     }
+    
+    /**
+     * 
+     * @param movies 
+     */
 
     public void setMovies(HashMap<Long, Movie> movies) {
         this.movies = movies;
