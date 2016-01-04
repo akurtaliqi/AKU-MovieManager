@@ -54,7 +54,7 @@ public class Person implements Serializable {
     
     /**
      * 
-     * @return id
+     * @return Person's id
      */
 
     public Long getId() {
@@ -64,6 +64,7 @@ public class Person implements Serializable {
     /**
      * 
      * @param id 
+     * Set the person's ID with the parameter id
      */
 
     public void setId(Long id) {
@@ -72,7 +73,7 @@ public class Person implements Serializable {
     
     /**
      * 
-     * @return 
+     * @return Person's FirstName
      */
 
     public String getFirstName() {
@@ -82,6 +83,7 @@ public class Person implements Serializable {
     /**
      * 
      * @param firstName 
+     * Set the person's firstName with the parameter firstName
      */
     public void setFirstName(String firstName) {
         this.firstName = firstName;
@@ -89,7 +91,7 @@ public class Person implements Serializable {
     
     /**
      * 
-     * @return 
+     * @return Person's LastName
      */
     public String getLastName() {
         return lastName;
@@ -98,6 +100,7 @@ public class Person implements Serializable {
     /**
      * 
      * @param lastName 
+     * Set the person's lastName with the parameter lastName
      */
     public void setLastName(String lastName) {
         this.lastName = lastName;
@@ -105,7 +108,7 @@ public class Person implements Serializable {
     
     /**
      * 
-     * @return 
+     * @return Person's movies list
      */
     public HashMap<Long, Movie> getMovies() {
         return movies;
@@ -114,6 +117,7 @@ public class Person implements Serializable {
     /**
      * 
      * @param movies 
+     * Set the person's movies list with the parameter movies
      */
 
     public void setMovies(HashMap<Long, Movie> movies) {
