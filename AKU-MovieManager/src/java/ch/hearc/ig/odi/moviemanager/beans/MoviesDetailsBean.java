@@ -50,11 +50,22 @@ public class MoviesDetailsBean implements Serializable {
     public List<Person> getPersonMovies() {
         return new ArrayList(movie.getPersonnes().values());
     }
+    
+    /**
+     * 
+     * @return movie
+     * 
+     */
 
     public Movie getMovie() {
         return movie;
     }
-
+    
+    /**
+     * 
+     * @param movie 
+     * set a movie with the parameter movie
+     */
     public void setMovie(Movie movie) {
         this.movie = movie;
     }

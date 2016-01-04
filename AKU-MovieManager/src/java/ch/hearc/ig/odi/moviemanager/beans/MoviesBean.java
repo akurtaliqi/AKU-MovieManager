@@ -28,13 +28,9 @@ public class MoviesBean {
     private DataModel<Movie> movies;
 
     /**
-     * Get a list of people
+     * Get a list of movies
      *
-     * @return list of people
-     
-    public List<Movie> getMovies() {
-        return services.getMoviesList();
-    }
+     * @return list of movies
     * */
     
     public DataModel<Movie> getMovies() {

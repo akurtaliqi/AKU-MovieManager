@@ -29,9 +29,9 @@ public class PersonDetailsBean implements Serializable {
     }
     
     /**
-     * Méthode qui reçoit la personne à afficher sur la page.
-     * @param pers La personne à afficher
-     * @return "show" si le client est valide, "error" si le paramètre est null
+     * Recieve in parameter the person to print on the page.
+     * @param pers The person to print
+     * @return "show" if the person is valid or "error" if the paramter is null
      */
     public String showPerson(Person pers){
         if(pers != null){
@@ -43,6 +43,11 @@ public class PersonDetailsBean implements Serializable {
         }
     }
     
+    /**
+     * @return ArrayList The list to print
+     * return the movies seen by the person or null if no movies has been seen
+     */
+    
     public List<Person> getMovies(){
         if(person == null){
             return new ArrayList();
@@ -51,9 +56,19 @@ public class PersonDetailsBean implements Serializable {
         return new ArrayList(person.getMovies().values());
     }
 
+    /**
+     * 
+     * @return Person
+     */
     public Person getPerson() {
         return person;
     }
+    
+    /**
+     * 
+     * @param person 
+     * set a Person with the parameter person
+     */
 
     public void setPerson(Person person) {
         this.person = person;

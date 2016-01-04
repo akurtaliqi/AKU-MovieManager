@@ -21,12 +21,12 @@ public class Movie implements Serializable {
     private String producer;
     private HashMap<Long, Person> personnes;
 
-    /**
-     * Constructeur paramétré de la classe Movie. 
-     * Toutes les valeurs sont obligatoires.
-     * @param id Le numéro identifiant du film
-     * @param name Le titre du film
-     * @param producer Le nom du réalisateur
+    /** 
+     * Parametred constructor of the class Movie.
+     * All the values are obligatory.
+     * @param id ID of the movie
+     * @param name Movie's title
+     * @param producer Producer's name
      */
     public Movie(Long id, String name, String producer) {
         this.id = id;
@@ -34,39 +34,87 @@ public class Movie implements Serializable {
         this.producer = producer;
         this.personnes = new HashMap();
     }
+    
+    /**
+     * 
+     * @return Movie's ID
+     */
 
     public Long getId() {
         return id;
     }
+    
+    /**
+     * 
+     * @param id 
+     * Set the movie's ID with the parameter ID
+     */
 
     public void setId(Long id) {
         this.id = id;
     }
-
+    
+    /**
+     * 
+     * @return Movie's title
+     * 
+     */
     public String getName() {
         return name;
     }
-
+    
+    /**
+     * 
+     * @param name 
+     * Set the Movie's title with the parameter name
+     */
     public void setName(String name) {
         this.name = name;
     }
-
+    
+    /**
+     * 
+     * @return Movie's producer
+     * 
+     */
     public String getProducer() {
         return producer;
     }
+    
+    /**
+     * 
+     * @param producer 
+     * 
+     * Set the Movie's producer with the parameter name
+     */
 
     public void setProducer(String producer) {
         this.producer = producer;
     }
+    
+    /**
+     * 
+     * @return HashMap<Long,Person> 
+     * Person's List who have seen the movie
+     */
 
     public HashMap<Long, Person> getPersonnes() {
         return personnes;
     }
-
+    
+    /**
+     * 
+     * @param personnes 
+     * Set the person's who have seen the movie with the parameter personnes
+     */
     public void setPersonnes(HashMap<Long, Person> personnes) {
         this.personnes = personnes;
     }
     
+    /**
+     * 
+     * @return List<Person>
+     */
     public List<Person> getPeople() {
         return new ArrayList<>(personnes.values());
     }
